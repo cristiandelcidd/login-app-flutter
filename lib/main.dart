@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:login_app/modules/pages/home_page.dart';
 
 import 'package:login_app/modules/pages/login_page.dart';
 
@@ -16,13 +17,13 @@ final GoRouter _router = GoRouter(
     //   path: '/register',
     //   builder: (context, state) => const RegisterScreen(),
     // ),
-    // GoRoute(
-    //   path: '/home',
-    //   builder: (context, state) {
-    //     final email = state.extra as String? ?? 'Usuario';
-    //     return HomeScreen(email: email);
-    //   },
-    // ),
+    GoRoute(
+      path: '/home',
+      builder: (context, state) {
+        final email = state.extra as String? ?? 'Usuario';
+        return HomeScreen(email: email);
+      },
+    ),
   ],
 );
 
