@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:login_app/modules/pages/home_page.dart';
 
+import 'package:login_app/modules/pages/home_page.dart';
 import 'package:login_app/modules/pages/login_page.dart';
+import 'package:login_app/modules/pages/register_page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -13,10 +14,10 @@ final GoRouter _router = GoRouter(
       path: '/',
       builder: (context, state) => const LoginScreen(),
     ),
-    // GoRoute(
-    //   path: '/register',
-    //   builder: (context, state) => const RegisterScreen(),
-    // ),
+    GoRoute(
+      path: '/register',
+      builder: (context, state) => const RegisterScreen(),
+    ),
     GoRoute(
       path: '/home',
       builder: (context, state) {
