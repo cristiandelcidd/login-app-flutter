@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (email.isEmpty || password.isEmpty) {
       _showMessage('Por favor, completa todos los campos');
     } else if (user == null) {
-      _showMessage('Credenciales incorrectas');
+      _showMessage('Usuario no registrado.');
     } else {
       context.go('/home', extra: user.email);
     }
