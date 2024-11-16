@@ -20,10 +20,14 @@ class _LoginScreenState extends State<LoginScreen> {
     final email = _emailController.text.trim();
     final password = _passwordController.text.trim();
 
-    final user = usersRegistered.firstWhere(
-      (user) => user.email == email && user.password == password,
-      orElse: () => null as dynamic,
-    ) as User?;
+    User? user;
+    try {
+      user = usersRegistered.firstWhere(
+        (user) => user.email == email && user.password == password,
+      );
+    } catch (e) {
+      user = null;
+    }
 
     if (email.isEmpty || password.isEmpty) {
       _showMessage('Por favor, completa todos los campos');
