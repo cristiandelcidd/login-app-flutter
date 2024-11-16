@@ -35,7 +35,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         return StatefulBuilder(
           builder: (context, setModalState) {
             timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-              if (countdown > 0) {
+              if (countdown > 1) {
                 if (mounted) {
                   setModalState(() {
                     countdown--;
@@ -85,7 +85,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       if (isEmailTaken) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('El correo ya está registrado. Usa otro.'),
+            content: Text('El correo ya está registrado. Intente con otro, por favor.'),
             backgroundColor: Colors.red,
           ),
         );
@@ -252,7 +252,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         } else if (!RegExp(
                                 r'^(?=.*[A-Z])(?=.*[!@#\$&*~]).{8,}$')
                             .hasMatch(value)) {
-                          return 'Debe tener 8 caracteres, una mayúscula y un carácter especial';
+                          return 'Debe tener 8 caracteres, una mayúscula y un caracter especial';
                         }
                         return null;
                       },
